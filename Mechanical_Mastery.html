@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mechanical Mastery | THE ENDGAME</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="../Access/Js/tailwind-config.js"></script>
+    <script src="../Access/Js/nav.js"></script>
+    <link href="../Access/Css/mechanical.css" rel="stylesheet" />
+</head>
+
+<body class="overflow-x-hidden">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-10 py-6 max-w-[1920px] mx-auto bg-[#131313]/80 backdrop-blur-[30px] shadow-[0_0_30px_rgba(143,0,255,0.1)]">
+        <div
+            class="text-2xl font-black tracking-tighter text-[#dab9ff] font-['Space_Grotesk'] uppercase tracking-[-0.02em]">
+            THE ENDGAME</div>
+        <div class="hidden md:flex items-center space-x-12">
+            <a class="text-white/70 hover:text-white transition-colors font-['Space_Grotesk'] uppercase tracking-[-0.02em] text-sm"
+                href="index.html">Trang chủ</a>
+            <a class="text-[#dab9ff] border-b-2 border-[#dab9ff] pb-1 font-['Space_Grotesk'] uppercase tracking-[-0.02em] text-sm"
+                href="Mechanical_Mastery.html">Bàn phím</a>
+            <a class="text-white/70 hover:text-white transition-colors font-['Space_Grotesk'] uppercase tracking-[-0.02em] text-sm"
+                href="Optical_Precision.html">Chuột</a>
+            <a class="text-white/70 hover:text-white transition-colors font-['Space_Grotesk'] uppercase tracking-[-0.02em] text-sm"
+                href="team.html">Liên hệ</a>
+        </div>
+        <div class="flex items-center space-x-4 md:space-x-6 text-[#dab9ff]">
+            <button id="cart-button" class="relative hover:text-[#dab9ff] transition-all duration-300 active:scale-95 duration-200" aria-label="Mở giỏ hàng">
+                <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                <span id="cart-count" class="absolute -top-2 -right-2 min-w-[20px] h-5 rounded-full bg-primary text-[10px] leading-5 text-black font-bold text-center hidden">0</span>
+            </button>
+            <button class="hidden md:block hover:text-[#dab9ff] transition-all duration-300 active:scale-95 duration-200">
+                <span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+            </button>
+            <button id="mobile-menu-btn" class="md:hidden hover:text-[#dab9ff] transition-all duration-300 active:scale-95 duration-200">
+                <span class="material-symbols-outlined" data-icon="menu">menu</span>
+            </button>
+        </div>
+    </nav>
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="fixed top-[80px] left-0 w-full bg-[#131313]/95 backdrop-blur-xl z-40 hidden border-t border-white/10 md:hidden">
+        <div class="flex flex-col px-6 py-6 space-y-6 font-['Space_Grotesk'] uppercase tracking-[0.1em] text-center text-sm">
+            <a class="text-white/70 hover:text-white" href="index.html">Trang chủ</a>
+            <a class="text-[#dab9ff]" href="Mechanical_Mastery.html">Bàn phím</a>
+            <a class="text-white/70 hover:text-white" href="Optical_Precision.html">Chuột</a>
+            <a class="text-white/70 hover:text-white" href="team.html">Liên hệ</a>
+        </div>
+    </div>
+    <div id="cart-popup" class="fixed top-[90px] right-6 w-[340px] max-h-[80vh] overflow-hidden rounded-[28px] bg-[#131313]/95 border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.45)] backdrop-blur-3xl text-white hidden z-50">
+        <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
+            <div>
+                <h2 class="text-lg font-bold uppercase">Giỏ hàng</h2>
+                <p id="cart-summary" class="text-xs text-white/60">0 sản phẩm</p>
+            </div>
+            <button id="cart-close" class="text-white/70 hover:text-white">Đóng</button>
+        </div>
+        <div id="cart-items" class="max-h-[50vh] overflow-auto"></div>
+        <div class="p-5 border-t border-white/10">
+            <div class="flex items-center justify-between mb-3">
+                <span class="text-sm text-white/70 uppercase tracking-[0.2em]">Tổng</span>
+                <span id="cart-total" class="text-lg font-bold">$0</span>
+            </div>
+            <button id="checkout-button" class="w-full py-3 bg-primary text-black font-bold uppercase tracking-[0.16em] rounded-xl hover:opacity-90 transition-opacity">Thanh toán</button>
+        </div>
+    </div>
+    <!-- Hero Section -->
+    <section class="relative h-[921px] w-full flex items-center justify-center overflow-hidden bg-surface pt-20">
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img class="w-full h-full object-cover"
+                data-alt="top-down cinematic view of a custom mechanical keyboard with glowing violet backlighting and metallic accents in a dark studio setting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1sO0W9vDVINcE-eBcmcK5JiNQ-uzfaGOMsn-6KhI-weo7XIiqNwX-D5wDAJiUeY7TjsU_29ZivlPXG0BjrAVJI88i_cP3NQqrrh_lACx26Ps_Zby1nEwKOB8fI9japJN8SdQUcw9_uWvqF5V93j4vvjXMUyh0BKfGb5sx6sqWun18KW93Oi2zu4DbaMdeyVx1ndnhkS9fj3V0iH5NwOBXgljcn-6LmSKvD6K03gcwJZlXgPS-MT7SqBlCM51obss5eUgVxYy7riGJ" />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#131313] via-transparent to-[#131313]/50"></div>
+        </div>
+        <div class="relative z-10 text-center px-6 max-w-5xl">
+            <h1
+                class="font-headline text-7xl md:text-9xl font-black text-white tracking-tighter uppercase mb-6 leading-none">
+                Mechanical <br /> <span class="text-primary text-glow-primary">Mastery</span>
+            </h1>
+            <p
+                class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl mx-auto mb-10 font-light tracking-wide">
+                Định nghĩa lại trải nghiệm gõ phím với những tuyệt tác kỹ thuật, nơi sự chính xác cơ học gặp gỡ thẩm mỹ
+                vị lai.
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                <button
+                    class="w-full md:w-auto px-10 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold uppercase tracking-widest hover:shadow-[0_0_30px_rgba(143,0,255,0.5)] transition-all duration-500">
+                    Khám phá ngay
+                </button>
+                <button
+                    class="w-full md:w-auto px-10 py-4 bg-surface-container-highest/40 backdrop-blur-md text-white font-headline font-bold border border-white/10 uppercase tracking-widest hover:bg-white/10 transition-all duration-500">
+                    Xem thông số
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Core Features - Bento Grid -->
+    <section class="py-24 px-6 md:px-10 bg-surface-container-low">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="mb-16">
+                <h2 class="font-headline text-4xl font-bold uppercase tracking-tighter text-white mb-2">Engineering
+                    Excellence</h2>
+                <div class="h-1 w-20 bg-secondary-fixed"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <!-- Feature 1 -->
+                <div
+                    class="md:col-span-2 md:row-span-2 bg-surface-container-high p-10 flex flex-col justify-between border-b-2 border-primary-container transition-all hover:bg-surface-bright group">
+                    <div>
+                        <span class="material-symbols-outlined text-primary text-5xl mb-6"
+                            data-icon="layers">layers</span>
+                        <h3 class="font-headline text-3xl font-bold uppercase text-white mb-4">Cấu trúc Gasket Mount
+                        </h3>
+                        <p class="font-body text-on-surface-variant leading-relaxed">Hệ thống treo đệm cao cấp triệt
+                            tiêu mọi rung động dư thừa, mang lại cảm giác gõ mềm mại và âm thanh "thock" đặc trưng của
+                            những chiếc bàn phím hi-end.</p>
+                    </div>
+                    <div class="mt-10 opacity-20 group-hover:opacity-100 transition-opacity">
+                        <img class="w-full h-40 object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            data-alt="technical cross-section diagram of a gasket mounted keyboard internal structure with foam and gaskets"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx0iX2JdSAU7t47CRVagvokT38LHzPThfVx1n4Y_KjY7ZeDON0Lwgenp4Jh0YZAvcCQ5HBdjd1sJdTLUmmDaomqT0rZhF_Fh-bHHp4sJ0NctweylwXswByfGwGghz2YP51Ek5dhN-9GjPknR7RYekWkQNj_fzAScdwTYjrgwU4bhVQry49TXt5Qu0aFRbjGoo9uRZF20Q87tXkpdg3A4_oach0R-j0XeubvCm75UlSxLdhG3uMQ3xhVxzdHEGXLk2mD8JVhuurw-kw" />
+                    </div>
+                </div>
+                <!-- Feature 2 -->
+                <div
+                    class="md:col-span-2 bg-surface-container-high p-8 flex items-start gap-6 border-l-2 border-secondary-fixed transition-all hover:bg-surface-bright outline-glow-cyan">
+                    <span class="material-symbols-outlined text-secondary-fixed text-4xl" data-icon="bolt">bolt</span>
+                    <div>
+                        <h3 class="font-headline text-xl font-bold uppercase text-white mb-2">Mạch xuôi Hot-swap</h3>
+                        <p class="font-body text-sm text-on-surface-variant">Tương thích mọi loại switch 3-pin/5-pin mà
+                            không cần hàn mạch. Thiết kế mạch xuôi tránh tình trạng cấn keycap profile Cherry.</p>
+                    </div>
+                </div>
+                <!-- Feature 3 -->
+                <div
+                    class="md:col-span-2 bg-surface-container-high p-8 flex items-start gap-6 border-l-2 border-primary transition-all hover:bg-surface-bright outline-glow-violet">
+                    <span class="material-symbols-outlined text-primary text-4xl" data-icon="opacity">opacity</span>
+                    <div>
+                        <h3 class="font-headline text-xl font-bold uppercase text-white mb-2">Switch Linear Lube Sẵn
+                        </h3>
+                        <p class="font-body text-sm text-on-surface-variant">Từng chiếc switch được xử lý thủ công với
+                            mỡ Krytox 205g0, loại bỏ hoàn toàn tiếng "scratchy" cho hành trình phím mượt mà tuyệt đối.
+                        </p>
+                    </div>
+                </div>
+                <!-- Feature 4 -->
+                <div
+                    class="md:col-span-4 bg-surface-container-lowest p-8 flex flex-col md:flex-row items-center justify-between border-t border-white/5 transition-all hover:bg-surface-bright">
+                    <div class="flex items-center gap-6 mb-4 md:mb-0">
+                        <span class="material-symbols-outlined text-white text-4xl" data-icon="balance">balance</span>
+                        <h3 class="font-headline text-xl font-bold uppercase text-white">Stab cân chỉnh thủ công</h3>
+                    </div>
+                    <p class="font-body text-sm text-on-surface-variant md:max-w-xl text-center md:text-right">
+                        Stabilizers được tinh chỉnh tỉ mỉ, cân wire và holee mod để đảm bảo các phím dài luôn ổn định và
+                        không có tiếng lọc xọc.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Showcase Gallery -->
+    <section class="py-24 px-6 md:px-10 bg-surface">
+        <div class="max-w-[1400px] mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <span class="font-label text-secondary-fixed text-xs tracking-[0.3em] uppercase mb-2 block">Premium
+                        Collection</span>
+                    <h2 class="font-headline text-5xl font-black uppercase tracking-tighter text-white">The Gallery</h2>
+                </div>
+                <div class="flex gap-4">
+                    <button
+                        class="p-4 bg-surface-container-high border border-white/5 hover:bg-white/10 transition-all"><span
+                            class="material-symbols-outlined">filter_list</span></button>
+                    <button
+                        class="p-4 bg-surface-container-high border border-white/5 hover:bg-white/10 transition-all"><span
+                            class="material-symbols-outlined">grid_view</span></button>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div
+                    class="group relative bg-surface-container-low transition-all duration-500 hover:scale-[1.03] overflow-hidden">
+                    <div class="aspect-[4/5] overflow-hidden bg-surface-container-lowest relative">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            data-alt="high-end all-black mechanical keyboard with dark gray keycaps and minimalist white led on a carbon fiber surface"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4OzqhbsugA3FNzhBAh1gIS2c99H7Moio3NNJwaIWnr2W5yvczMAL5YJUSxzCvmwCdRPELLP2H4C-40vA6GBIwztzP3uneAXHqF3oco9gHgH5pRQu5Pr5wNH1z9cMfTymqYP8WG_m0jtNzeGLLcBeCrdilGIvK0GYDXJGNjK9nK1uJZD2QpQgCeRSTTVdt4goJPrWIGCBLtj0HD2Ye_hJCaK_0czYciPWVbzVxpnAt6MsgWkR06dlQ_X18TKBzxYsVCbflEvUo2pQG" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#131313] to-transparent opacity-60"></div>
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="bg-primary px-3 py-1 text-[10px] font-bold text-on-primary uppercase tracking-widest">Flagship</span>
+                        </div>
+                    </div>
+                    <div
+                        class="p-8 relative z-10 border-t border-white/5 group-hover:border-primary/50 transition-colors">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-headline text-2xl font-bold uppercase text-white">ENDGAME 01-PRO</h3>
+                            <span class="font-label text-primary font-bold">$349</span>
+                        </div>
+                        <p class="font-body text-sm text-on-surface-variant mb-6">Full aluminum CNC case, Gasket
+                            structure, 75% Layout.</p>
+                        <button
+                            class="w-full py-4 border border-white/20 font-headline text-sm font-bold uppercase tracking-widest group-hover:bg-primary group-hover:text-on-primary transition-all duration-300"
+                            data-add-to-cart
+                            data-id="endgame-01-pro"
+                            data-name="ENDGAME 01-PRO"
+                            data-price="349"
+                            data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuD4OzqhbsugA3FNzhBAh1gIS2c99H7Moio3NNJwaIWnr2W5yvczMAL5YJUSxzCvmwCdRPELLP2H4C-40vA6GBIwztzP3uneAXHqF3oco9gHgH5pRQu5Pr5wNH1z9cMfTymqYP8WG_m0jtNzeGLLcBeCrdilGIvK0GYDXJGNjK9nK1uJZD2QpQgCeRSTTVdt4goJPrWIGCBLtj0HD2Ye_hJCaK_0czYciPWVbzVxpnAt6MsgWkR06dlQ_X18TKBzxYsVCbflEvUo2pQG">
+                            Thêm vào giỏ
+                        </button>
+                    </div>
+                    <div
+                        class="absolute inset-0 border border-primary/0 group-hover:border-primary/40 transition-all pointer-events-none shadow-[0_0_30px_rgba(143,0,255,0)] group-hover:shadow-[0_0_40px_rgba(143,0,255,0.2)]">
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div
+                    class="group relative bg-surface-container-low transition-all duration-500 hover:scale-[1.03] overflow-hidden">
+                    <div class="aspect-[4/5] overflow-hidden bg-surface-container-lowest relative">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            data-alt="modern mechanical keyboard with vibrant cyan and purple neon lighting reflecting on a glossy desk"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAucCLzjnU8Xl9JfbhynoGHayaMkM5to8riIil-wWnYwfor8N4UfF4CRbzEq27vftLFyD8lnzdxuW4cAj9zvwBsQ8ns0MSz3-K0Nf0OTAHPHgqFBTxDin1oijeE4VkRD8OFm2PJEKwiSTzoNU0E3j_kPrzhYgB75L9b0-sraxJ1A3mOjnJCotRpAniU_gYhRH4Qzn1wJe8fDRgQN4hVJQ6IYE2zVaoz66DxeFrKi0CJniWAy0npsxByjoRNCzCChYmNGrzYzeg7aZGI" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#131313] to-transparent opacity-60"></div>
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="bg-secondary-fixed px-3 py-1 text-[10px] font-bold text-on-secondary-fixed uppercase tracking-widest">Limited</span>
+                        </div>
+                    </div>
+                    <div
+                        class="p-8 relative z-10 border-t border-white/5 group-hover:border-secondary-fixed/50 transition-colors">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-headline text-2xl font-bold uppercase text-white">CYBER-GLOW V2</h3>
+                            <span class="font-label text-secondary-fixed font-bold">$299</span>
+                        </div>
+                        <p class="font-body text-sm text-on-surface-variant mb-6">Polycarbonate case, RGB Underglow,
+                            South-facing PCB.</p>
+                        <button
+                            class="w-full py-4 border border-white/20 font-headline text-sm font-bold uppercase tracking-widest group-hover:bg-secondary-fixed group-hover:text-on-secondary-fixed transition-all duration-300"
+                            data-add-to-cart
+                            data-id="cyber-glow-v2"
+                            data-name="CYBER-GLOW V2"
+                            data-price="299"
+                            data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuAucCLzjnU8Xl9JfbhynoGHayaMkM5to8riIil-wWnYwfor8N4UfF4CRbzEq27vftLFyD8lnzdxuW4cAj9zvwBsQ8ns0MSz3-K0Nf0OTAHPHgqFBTxDin1oijeE4VkRD8OFm2PJEKwiSTzoNU0E3j_kPrzhYgB75L9b0-sraxJ1A3mOjnJCotRpAniU_gYhRH4Qzn1wJe8fDRgQN4hVJQ6IYE2zVaoz66DxeFrKi0CJniWAy0npsxByjoRNCzCChYmNGrzYzeg7aZGI">
+                            Thêm vào giỏ
+                        </button>
+                    </div>
+                    <div
+                        class="absolute inset-0 border border-secondary-fixed/0 group-hover:border-secondary-fixed/40 transition-all pointer-events-none shadow-[0_0_30px_rgba(0,251,251,0)] group-hover:shadow-[0_0_40px_rgba(0,251,251,0.2)]">
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div
+                    class="group relative bg-surface-container-low transition-all duration-500 hover:scale-[1.03] overflow-hidden">
+                    <div class="aspect-[4/5] overflow-hidden bg-surface-container-lowest relative">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            data-alt="minimalist white and silver mechanical keyboard on a white desk with clean soft morning light"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjgdwCmN9xbzrKciN7OtMqaHAwL-__pTsB9_KqYJDKhYFg6a-lAVsJQQZzmj_T0E-2_FCxs1-kY21dJxcAiAPaVUf32PNIrxn9Rp3WbIA0wE7ZTbvQF_eU9VPg0-ooX-5TuPer7u3FAHaoh_rjxycdrs6AfVtQCVWEy0G20eKFCiWnEV2fW980tFYMEpPBhj0Gh4iKiGHGSScrMyvSL2SfmrZQ1YnR9IXz1KJZUEFNP98DuBZnbnmGVTTeG-7KZkjESNZnHz-GJxLC" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#131313] to-transparent opacity-60"></div>
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="bg-tertiary-container px-3 py-1 text-[10px] font-bold text-white uppercase tracking-widest">In
+                                Stock</span>
+                        </div>
+                    </div>
+                    <div
+                        class="p-8 relative z-10 border-t border-white/5 group-hover:border-white/50 transition-colors">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-headline text-2xl font-bold uppercase text-white">NORDIC WHITE</h3>
+                            <span class="font-label text-white font-bold">$219</span>
+                        </div>
+                        <p class="font-body text-sm text-on-surface-variant mb-6">Clean aesthetics, PBT Doubleshot
+                            keycaps, Linear Switch.</p>
+                        <button
+                            class="w-full py-4 border border-white/20 font-headline text-sm font-bold uppercase tracking-widest group-hover:bg-white group-hover:text-black transition-all duration-300"
+                            data-add-to-cart
+                            data-id="nordic-white"
+                            data-name="NORDIC WHITE"
+                            data-price="219"
+                            data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuBjgdwCmN9xbzrKciN7OtMqaHAwL-__pTsB9_KqYJDKhYFg6a-lAVsJQQZzmj_T0E-2_FCxs1-kY21dJxcAiAPaVUf32PNIrxn9Rp3WbIA0G7ZTbvQF_eU9VPg0-ooX-5TuPer7u3FAHaoh_rjxycdrs6AfVtQCVWEy0G20eKFCiWnEV2fW980tFYMEpPBhj0Gh4iKiGHGSScrMyvSL2SfmrZQ1YnR9IXz1KJZUEFNP98DuBZnbnmGVTTeG-7KZkjESNZnHz-GJxLC">
+                            Thêm vào giỏ
+                        </button>
+                    </div>
+                    <div
+                        class="absolute inset-0 border border-white/0 group-hover:border-white/40 transition-all pointer-events-none">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Technical Specs Asymmetric Section -->
+    <section class="py-24 px-6 md:px-10 bg-surface-container-lowest overflow-hidden">
+        <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            <div class="md:col-span-5 relative">
+                <div class="absolute -top-20 -left-20 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
+                <div class="relative z-10 border-l-4 border-primary pl-8">
+                    <h2 class="font-headline text-4xl font-black uppercase text-white mb-6 leading-tight">Mọi chi
+                        tiết<br />đều được tính toán</h2>
+                    <p class="font-body text-on-surface-variant mb-8 text-lg">Hệ sinh thái THE ENDGAME không chỉ bán sản
+                        phẩm, chúng tôi cung cấp một giải pháp hiệu năng đỉnh cao được tối ưu hóa cho những người dùng
+                        khắt khe nhất.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-4 text-sm font-label uppercase tracking-widest text-white/80">
+                            <span class="w-1.5 h-1.5 bg-primary"></span> 1000Hz Polling Rate (Wired)
+                        </li>
+                        <li class="flex items-center gap-4 text-sm font-label uppercase tracking-widest text-white/80">
+                            <span class="w-1.5 h-1.5 bg-primary"></span> Tri-mode Connectivity (Bluetooth/2.4G/USB)
+                        </li>
+                        <li class="flex items-center gap-4 text-sm font-label uppercase tracking-widest text-white/80">
+                            <span class="w-1.5 h-1.5 bg-primary"></span> Hỗ trợ QMK/VIA Key Remapping
+                        </li>
+                        <li class="flex items-center gap-4 text-sm font-label uppercase tracking-widest text-white/80">
+                            <span class="w-1.5 h-1.5 bg-primary"></span> Plate FR4/PC/Aluminum Options
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="md:col-span-7 relative group">
+                <img class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-1000"
+                    data-alt="dramatic macro shot of mechanical keyboard switches and internal PCB board with high-tech neon highlights"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsYRTj9ZSUNXfvqZbh9vVTW2CZBi5HsuYPjAahK_-xc-z0xS6Lm2N9BBbjv24z0PGjc1scR_i3FH0ZzLN3vIEzbL7lXVKra1CD1KnYM9g8t3x_RnI4h9ujvxsOI5HANTR28OMURoSbP-ANienWJAWxx9ZwFfIAILo9j20BK_6Xl1SMTsFABsElzazBSkXv94RWWjZl0Vwy_emTfJp3wTaulNWqIyShwx6DkYi8Li1dmYulxKqnsSnNQst1rHDySaQftcX1Q3EKa3g2" />
+                <div
+                    class="absolute bottom-0 right-0 p-8 bg-primary text-on-primary font-headline font-black text-6xl uppercase transform translate-x-10 translate-y-10 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 hidden md:block">
+                    END<br />GAME
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer
+        class="bg-[#131313] full-width py-20 px-10 border-t border-white/5 flex flex-col items-center justify-center text-center space-y-8 w-full">
+        <div class="font-['Space_Grotesk'] text-4xl font-bold text-white mb-4 uppercase tracking-tighter">THE ENDGAME
+        </div>
+        <div class="flex flex-wrap justify-center gap-8 md:gap-16">
+            <a class="font-['Be_Vietnam_Pro'] text-sm tracking-widest text-white/40 hover:text-[#8F00FF] transition-all"
+                href="#">Facebook</a>
+            <a class="font-['Be_Vietnam_Pro'] text-sm tracking-widest text-white/40 hover:text-[#8F00FF] transition-all"
+                href="#">Instagram</a>
+            <a class="font-['Be_Vietnam_Pro'] text-sm tracking-widest text-white/40 hover:text-[#8F00FF] transition-all"
+                href="#">Discord</a>
+            <a class="font-['Be_Vietnam_Pro'] text-sm tracking-widest text-white/40 hover:text-[#8F00FF] transition-all"
+                href="#">Twitter</a>
+        </div>
+        <p class="font-['Be_Vietnam_Pro'] text-sm tracking-widest text-white/20 uppercase max-w-lg mx-auto">
+            © 2024 THE ENDGAME - BY AESIEUNHAN. ALL RIGHTS RESERVED.
+        </p>
+    </footer>
+    <script>
+        const cartButton = document.getElementById('cart-button');
+        const cartPopup = document.getElementById('cart-popup');
+        const cartClose = document.getElementById('cart-close');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartSummary = document.getElementById('cart-summary');
+        const cartTotal = document.getElementById('cart-total');
+        const cartCount = document.getElementById('cart-count');
+        const addToCartButtons = document.querySelectorAll('[data-add-to-cart]');
+        const cartState = {};
+
+        function formatCurrency(value) {
+            return '$' + Number(value).toFixed(2).replace('.00', '');
+        }
+
+        function updateCartDisplay() {
+            const entries = Object.values(cartState);
+            const totalQuantity = entries.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = entries.reduce((sum, item) => sum + item.quantity * item.price, 0);
+
+            cartCount.textContent = totalQuantity;
+            cartCount.classList.toggle('hidden', totalQuantity === 0);
+            cartSummary.textContent = totalQuantity === 0 ? 'Giỏ hàng trống' : `${totalQuantity} sản phẩm`;
+            cartTotal.textContent = formatCurrency(totalPrice);
+
+            renderCartItems(entries);
+        }
+
+        function renderCartItems(items) {
+            if (!items.length) {
+                cartItemsContainer.innerHTML = '<div class="p-6 text-center text-white/60">Chưa có sản phẩm nào trong giỏ.</div>';
+                return;
+            }
+
+            cartItemsContainer.innerHTML = items.map(item => `
+                <div class="flex items-center justify-between gap-4 px-5 py-4 border-b border-white/10">
+                    <div>
+                        <p class="font-semibold text-white">${item.name}</p>
+                        <p class="text-xs text-white/60">${formatCurrency(item.price)} x ${item.quantity}</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button class="cart-qty-button w-8 h-8 rounded-full bg-white/10 text-white text-xl font-bold" data-action="decrease" data-id="${item.id}">-</button>
+                        <div class="min-w-[30px] text-center text-sm font-semibold">${item.quantity}</div>
+                        <button class="cart-qty-button w-8 h-8 rounded-full bg-white/10 text-white text-xl font-bold" data-action="increase" data-id="${item.id}">+</button>
+                    </div>
+                </div>
+            `).join('');
+
+            cartItemsContainer.querySelectorAll('.cart-qty-button').forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const id = event.currentTarget.dataset.id;
+                    const action = event.currentTarget.dataset.action;
+                    adjustQuantity(id, action === 'increase' ? 1 : -1);
+                });
+            });
+        }
+
+        function adjustQuantity(productId, delta) {
+            if (!cartState[productId]) return;
+            cartState[productId].quantity += delta;
+            if (cartState[productId].quantity <= 0) {
+                delete cartState[productId];
+            }
+            updateCartDisplay();
+        }
+
+        function addProductToCart(product) {
+            if (cartState[product.id]) {
+                cartState[product.id].quantity += 1;
+            } else {
+                cartState[product.id] = { ...product, quantity: 1 };
+            }
+            updateCartDisplay();
+        }
+
+        function animateToCart(sourceElement, imageSrc) {
+            const startRect = sourceElement.getBoundingClientRect();
+            const endRect = cartButton.getBoundingClientRect();
+            const flyer = document.createElement('div');
+            flyer.className = 'cart-flyer';
+            flyer.style.backgroundImage = `url(${imageSrc})`;
+            flyer.style.top = `${startRect.top + window.scrollY}px`;
+            flyer.style.left = `${startRect.left + window.scrollX}px`;
+            flyer.style.width = `${startRect.width}px`;
+            flyer.style.height = `${startRect.height}px`;
+            flyer.style.position = 'absolute';
+            flyer.style.zIndex = '9999';
+            flyer.style.borderRadius = '18px';
+            flyer.style.backgroundSize = 'cover';
+            flyer.style.backgroundPosition = 'center';
+            flyer.style.pointerEvents = 'none';
+            flyer.style.transition = 'transform 0.8s cubic-bezier(0.33,1,0.68,1), opacity 0.6s ease';
+            flyer.style.opacity = '1';
+            document.body.appendChild(flyer);
+
+            requestAnimationFrame(() => {
+                const translateX = endRect.left + endRect.width / 2 - (startRect.left + startRect.width / 2);
+                const translateY = endRect.top + endRect.height / 2 - (startRect.top + startRect.height / 2);
+                flyer.style.transform = `translate(${translateX}px, ${translateY}px) scale(0.2)`;
+                flyer.style.opacity = '0';
+            });
+
+            flyer.addEventListener('transitionend', () => flyer.remove(), { once: true });
+        }
+
+        function toggleCartPopup() {
+            cartPopup.classList.toggle('hidden');
+        }
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const product = {
+                    id: button.dataset.id,
+                    name: button.dataset.name,
+                    price: Number(button.dataset.price),
+                    image: button.dataset.image,
+                };
+                addProductToCart(product);
+                animateToCart(button, button.dataset.image);
+                if (cartPopup.classList.contains('hidden')) {
+                    cartPopup.classList.remove('hidden');
+                }
+            });
+        });
+
+        cartButton.addEventListener('click', () => {
+            toggleCartPopup();
+        });
+
+        cartClose.addEventListener('click', () => {
+            cartPopup.classList.add('hidden');
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!cartPopup.classList.contains('hidden') && !cartPopup.contains(event.target) && !cartButton.contains(event.target)) {
+                cartPopup.classList.add('hidden');
+            }
+        });
+
+        updateCartDisplay();
+    </script>
+</body>
+
+</html>

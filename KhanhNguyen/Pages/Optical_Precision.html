@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Be+Vietnam+Pro:wght@100;300;400;500;700&amp;family=Inter:wght@400;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../Access/Js/tailwind-config.js"></script>
+    <script src="../Access/Js/nav.js"></script>
+    <link href="../Access/Css/optical.css" rel="stylesheet" />
+</head>
+
+<body class="font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-10 py-6 max-w-[1920px] mx-auto bg-[#131313]/80 backdrop-blur-[30px] shadow-[0_0_30px_rgba(143,0,255,0.1)]">
+        <div class="text-2xl font-black tracking-tighter text-[#dab9ff] font-headline uppercase">THE ENDGAME</div>
+        <div class="hidden md:flex items-center space-x-8 font-headline uppercase tracking-[-0.02em]">
+            <a class="text-white/70 hover:text-white transition-colors" href="index.html">Trang chủ</a>
+            <a class="text-white/70 hover:text-white transition-colors" href="Mechanical_Mastery.html">Bàn phím</a>
+            <a class="text-[#dab9ff] border-b-2 border-[#dab9ff] pb-1" href="Optical_Precision.html">Chuột</a>
+            <a class="text-white/70 hover:text-white transition-colors" href="team.html">Liên hệ</a>
+        </div>
+        <div class="flex items-center space-x-4 md:space-x-6 text-[#dab9ff]">
+            <button class="hover:text-[#dab9ff] transition-all duration-300 active:scale-95">
+                <span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+            </button>
+            <button class="hidden md:block hover:text-[#dab9ff] transition-all duration-300 active:scale-95">
+                <span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+            </button>
+            <button id="mobile-menu-btn" class="md:hidden hover:text-[#dab9ff] transition-all duration-300 active:scale-95">
+                <span class="material-symbols-outlined" data-icon="menu">menu</span>
+            </button>
+        </div>
+    </nav>
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="fixed top-[80px] left-0 w-full bg-[#131313]/95 backdrop-blur-xl z-40 hidden border-t border-white/10 md:hidden">
+        <div class="flex flex-col px-6 py-6 space-y-6 font-['Space_Grotesk'] uppercase tracking-[0.1em] text-center text-sm">
+            <a class="text-white/70 hover:text-white" href="index.html">Trang chủ</a>
+            <a class="text-white/70 hover:text-white" href="Mechanical_Mastery.html">Bàn phím</a>
+            <a class="text-[#dab9ff]" href="Optical_Precision.html">Chuột</a>
+            <a class="text-white/70 hover:text-white" href="team.html">Liên hệ</a>
+        </div>
+    </div>
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="relative min-h-[921px] flex flex-col items-center justify-center overflow-hidden px-10">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#1c1b1b] to-[#131313] z-0"></div>
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container/10 rounded-full blur-[120px] z-0">
+            </div>
+            <div class="relative z-10 text-center max-w-4xl mx-auto">
+                <span class="font-label text-secondary-fixed tracking-[0.4em] uppercase text-xs mb-4 block">Optical
+                    Precision Engineering</span>
+                <h1
+                    class="font-headline text-6xl md:text-8xl font-black tracking-tighter text-on-surface uppercase mb-6 leading-none">
+                    ULTRALIGHT <br /> <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary-fixed-dim">EVOLUTION</span>
+                </h1>
+                <p class="font-body text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Định nghĩa lại tốc độ phản xạ với cấu trúc 54g và công nghệ truyền tải dữ liệu 8000Hz. Không chỉ là
+                    một con chuột, đây là phần mở rộng của ý chí bạn.
+                </p>
+                <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                    <button
+                        class="bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold py-4 px-12 text-lg uppercase tracking-widest hover:shadow-[0_0_40px_rgba(143,0,255,0.5)] transition-all active:scale-95">
+                        Mua ngay
+                    </button>
+                    <button
+                        class="bg-surface-container-highest text-white font-headline font-bold py-4 px-12 text-lg uppercase tracking-widest backdrop-blur-md border border-white/10 hover:bg-white hover:text-background transition-all">
+                        Thông số chi tiết
+                    </button>
+                </div>
+            </div>
+            <!-- Hero Mouse Image -->
+            <div class="relative z-10 mt-16 w-full max-w-5xl">
+                <img class="w-full h-auto object-contain grayscale-[0.2] contrast-125 drop-shadow-[0_0_50px_rgba(0,251,251,0.2)]"
+                    data-alt="top view of a sleek futuristic matte black gaming mouse with subtle purple neon light accents on dark industrial background"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAERM6wGO_VuUy43sYgMjUi_L6luB7YoQBeFaYJSLP14tkkTYJNqLZAHOCiwuUF7XQbf09G5VwZOGoqAupiCrv4HdcJ6GBJcybs1QF_-T0-UV3tfy1Qe9qYv3igrdFzoH2VMickqWqAG8oJVilp9vuUtEyjczC16jiIm2SUanRd29Hbr_9cl1NRmyxJI2JKwXPLo19Bw26Btw0yn9Ellh2iWA-ig6vs1ve1TEdqGTPwA7hRI6r1hrxyxj1nL2E1JWs3vW5gUfz4USFm" />
+            </div>
+        </section>
+        <!-- Technical Bento Grid -->
+        <section class="py-24 px-10 max-w-[1400px] mx-auto bg-surface-container-low">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+                <!-- Stat 1 -->
+                <div
+                    class="bg-surface-container-lowest p-12 flex flex-col justify-between border-b md:border-b-0 md:border-r border-white/5 group">
+                    <span class="font-label text-primary-fixed uppercase text-[10px] tracking-widest mb-8">Optical
+                        Sensor</span>
+                    <div>
+                        <h2 class="font-headline text-5xl font-black text-white mb-2">PAW3395</h2>
+                        <p class="text-on-surface-variant font-label uppercase text-sm tracking-tighter">Mắt đọc chính
+                            xác nhất thế giới</p>
+                    </div>
+                    <div
+                        class="mt-12 text-primary font-headline text-7xl font-bold opacity-20 group-hover:opacity-100 transition-opacity">
+                        26K DPI</div>
+                </div>
+                <!-- Stat 2 -->
+                <div
+                    class="bg-surface-container-lowest p-12 flex flex-col justify-between border-b md:border-b-0 md:border-r border-white/5 group">
+                    <span
+                        class="font-label text-secondary-fixed-dim uppercase text-[10px] tracking-widest mb-8">Hyper-Response</span>
+                    <div>
+                        <h2 class="font-headline text-5xl font-black text-white mb-2">8000Hz</h2>
+                        <p class="text-on-surface-variant font-label uppercase text-sm tracking-tighter">Độ trễ phản hồi
+                            cực thấp 0.125ms</p>
+                    </div>
+                    <div
+                        class="mt-12 text-secondary-fixed-dim font-headline text-7xl font-bold opacity-20 group-hover:opacity-100 transition-opacity">
+                        ZERO LAG</div>
+                </div>
+                <!-- Stat 3 -->
+                <div class="bg-surface-container-lowest p-12 flex flex-col justify-between group">
+                    <span class="font-label text-on-surface uppercase text-[10px] tracking-widest mb-8">Structural
+                        Integrity</span>
+                    <div>
+                        <h2 class="font-headline text-5xl font-black text-white mb-2">54G</h2>
+                        <p class="text-on-surface-variant font-label uppercase text-sm tracking-tighter">Trọng lượng
+                            siêu nhẹ, không đục lỗ</p>
+                    </div>
+                    <div
+                        class="mt-12 text-on-surface font-headline text-7xl font-bold opacity-20 group-hover:opacity-100 transition-opacity">
+                        FEATHER</div>
+                </div>
+            </div>
+        </section>
+        <!-- Feature Spotlight -->
+        <section class="py-32 flex flex-col md:flex-row items-center gap-20 px-10 max-w-[1400px] mx-auto">
+            <div
+                class="w-full md:w-1/2 aspect-square bg-surface-container-high relative flex items-center justify-center p-12 overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-tr from-primary-container/20 to-transparent"></div>
+                <img class="relative z-10 w-full h-full object-cover grayscale brightness-75"
+                    data-alt="macro close-up of a gaming mouse side buttons and scroll wheel with cyan glowing outlines and mechanical textures"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwuX1t2RSb-2grMVDknxqPXylABcUNCeo9cPzlSLuq9v1rtC7zzGVtjj8nvn5XpfwlvX3Cz610HTLNZOsEBvmzRJZbX8lQ9gLLhqUAsBZQEtz31R2K_gZX-CcxcC7MIPQDtLCG5luuj_sajdGSx_I83wanfnNWqcX4enJIHlWM7UD_sKTV9C7cTVwxDiTQRxvbBzXFNDsDOYUPwF9_7LrCrWxOcfU0L_jpzyt2JqpUSfCc-VCuZUCxcSEvNXk4ozMTJmS-0E2WnOaE" />
+                <div class="absolute bottom-0 right-0 p-8 text-right">
+                    <p class="font-label text-[10px] text-white/40 tracking-[0.5em] uppercase">Mechanical Precision</p>
+                    <p class="font-headline text-2xl font-bold text-white">GEN-3 OPTICAL SWITCHES</p>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 space-y-10">
+                <div class="space-y-4">
+                    <h3 class="font-headline text-5xl font-black uppercase text-white leading-tight">Mắt Đọc PAW3395
+                        <br /> Cảm Biến Thế Hệ Mới
+                    </h3>
+                    <p class="font-body text-on-surface-variant text-lg leading-relaxed">
+                        Sử dụng công nghệ theo dõi thông minh, cảm biến PAW3395 cho phép duy trì độ nhạy nhất quán trên
+                        mọi bề mặt. Từ kính đến lót chuột vải, mọi cú click đều đạt độ chính xác pixel.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-8 pt-8 border-t border-white/10">
+                    <div>
+                        <p class="text-primary-fixed font-headline text-3xl font-bold">650 IPS</p>
+                        <p class="text-on-surface-variant text-sm font-label uppercase tracking-widest">Tốc độ tối đa
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-secondary-fixed-dim font-headline text-3xl font-bold">50G</p>
+                        <p class="text-on-surface-variant text-sm font-label uppercase tracking-widest">Gia tốc tối đa
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Comparison Table (Industrial Style) -->
+        <section class="py-32 px-10 bg-[#0e0e0e]">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-20">
+                    <h2
+                        class="font-headline text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">
+                        THE PERFORMANCE GAP</h2>
+                    <p class="font-body text-on-surface-variant">So sánh sức mạnh giữa thiết bị tiêu chuẩn và hệ sinh
+                        thái THE ENDGAME.</p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-white/20">
+                                <th class="py-8 font-headline uppercase tracking-widest text-white/50 text-xs">Feature
+                                    Specification</th>
+                                <th
+                                    class="py-8 font-headline uppercase tracking-widest text-white/50 text-xs text-center px-6">
+                                    Standard Mouse</th>
+                                <th
+                                    class="py-8 font-headline uppercase tracking-widest text-primary text-xs text-center px-6">
+                                    The Endgame Mouse</th>
+                            </tr>
+                        </thead>
+                        <tbody class="font-label">
+                            <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                                <td class="py-6 text-on-surface-variant font-medium">Sensor Technology</td>
+                                <td class="py-6 text-center text-white/70">Standard Optical</td>
+                                <td class="py-6 text-center text-primary font-bold">PAW3395 Precision</td>
+                            </tr>
+                            <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                                <td class="py-6 text-on-surface-variant font-medium">Polling Rate (Latency)</td>
+                                <td class="py-6 text-center text-white/70">1000Hz (1.0ms)</td>
+                                <td class="py-6 text-center text-secondary-fixed-dim font-bold">8000Hz (0.125ms)</td>
+                            </tr>
+                            <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                                <td class="py-6 text-on-surface-variant font-medium">Weight Factor</td>
+                                <td class="py-6 text-center text-white/70">80g - 110g</td>
+                                <td class="py-6 text-center text-primary font-bold">54g Ultra-Solid</td>
+                            </tr>
+                            <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                                <td class="py-6 text-on-surface-variant font-medium">Click Latency</td>
+                                <td class="py-6 text-center text-white/70">Moderate</td>
+                                <td class="py-6 text-center text-secondary-fixed-dim font-bold">Near-Zero Mechanical
+                                </td>
+                            </tr>
+                            <tr class="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
+                                <td class="py-6 text-on-surface-variant font-medium">Surface Calibration</td>
+                                <td class="py-6 text-center text-white/70">Manual</td>
+                                <td class="py-6 text-center text-primary font-bold">AI Smart Tracking</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="py-32 px-10 text-center relative overflow-hidden">
+            <div class="absolute inset-0 bg-surface-container-high z-0 opacity-50"></div>
+            <div class="relative z-10 max-w-2xl mx-auto">
+                <h2 class="font-headline text-5xl font-black text-white uppercase mb-8">ARE YOU READY?</h2>
+                <p class="font-body text-on-surface-variant mb-12">Gia nhập đội quân tinh nhuệ. Sở hữu công cụ chiến
+                    thắng tối thượng của THE ENDGAME ngay hôm nay.</p>
+                <div
+                    class="inline-flex items-center gap-4 bg-primary text-on-primary py-5 px-10 font-headline font-bold uppercase tracking-widest cursor-pointer hover:bg-secondary-fixed transition-all group">
+                    <span>Thêm vào giỏ hàng</span>
+                    <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform"
+                        data-icon="arrow_forward">arrow_forward</span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="bg-[#131313] py-20 px-10 border-t border-white/5 flex flex-col items-center justify-center text-center space-y-8 w-full">
+        <div class="font-['Space_Grotesk'] text-4xl font-bold text-white mb-4 uppercase">THE ENDGAME</div>
+        <div class="flex space-x-12">
+            <a class="text-white/40 font-['Be_Vietnam_Pro'] text-sm tracking-widest hover:text-[#8F00FF] transition-all"
+                href="#">Facebook</a>
+            <a class="text-white/40 font-['Be_Vietnam_Pro'] text-sm tracking-widest hover:text-[#8F00FF] transition-all"
+                href="#">Instagram</a>
+            <a class="text-white/40 font-['Be_Vietnam_Pro'] text-sm tracking-widest hover:text-[#8F00FF] transition-all"
+                href="#">Discord</a>
+            <a class="text-white/40 font-['Be_Vietnam_Pro'] text-sm tracking-widest hover:text-[#8F00FF] transition-all"
+                href="#">Twitter</a>
+        </div>
+        <p class="text-white/40 font-['Be_Vietnam_Pro'] text-sm tracking-widest uppercase">
+            © 2024 THE ENDGAME - BY AESIEUNHAN. ALL RIGHTS RESERVED.
+        </p>
+    </footer>
+</body>
+
+</html>

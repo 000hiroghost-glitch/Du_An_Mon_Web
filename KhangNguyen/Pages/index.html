@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Be+Vietnam+Pro:wght@100;300;400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../Access/Js/tailwind-config.js"></script>
+    <script src="../Access/Js/nav.js"></script>
+    <link href="../Access/Css/index.css" rel="stylesheet" />
+</head>
+
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
+    <!-- Top Navigation Bar -->
+    <nav
+        class="fixed top-0 w-full z-50 flex justify-between items-center px-6 md:px-10 py-6 max-w-[1920px] mx-auto bg-[#131313]/80 backdrop-blur-[30px] shadow-[0_0_30px_rgba(143,0,255,0.1)]">
+        <div class="text-2xl font-black tracking-tighter text-[#dab9ff] font-['Space_Grotesk'] uppercase">THE ENDGAME
+        </div>
+        <div class="hidden md:flex items-center space-x-10 font-['Space_Grotesk'] uppercase tracking-[-0.02em]">
+            <a class="text-[#dab9ff] border-b-2 border-[#dab9ff] pb-1 transition-all duration-300" href="index.html">Trang
+                chủ</a>
+            <a class="text-white/70 hover:text-white transition-colors hover:text-[#dab9ff]" href="Mechanical_Mastery.html">Bàn phím</a>
+            <a class="text-white/70 hover:text-white transition-colors hover:text-[#dab9ff]" href="Optical_Precision.html">Chuột</a>
+            <a class="text-white/70 hover:text-white transition-colors hover:text-[#dab9ff]" href="team.html">Liên hệ</a>
+        </div>
+        <div class="flex items-center space-x-4 md:space-x-6">
+            <button
+                class="material-symbols-outlined text-white/70 hover:text-[#dab9ff] transition-all">shopping_cart</button>
+            <button
+                class="hidden md:block material-symbols-outlined text-white/70 hover:text-[#dab9ff] transition-all">account_circle</button>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden material-symbols-outlined text-white/70 hover:text-[#dab9ff] transition-all">menu</button>
+        </div>
+    </nav>
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="fixed top-[80px] left-0 w-full bg-[#131313]/95 backdrop-blur-xl z-40 hidden border-t border-white/10 md:hidden">
+        <div class="flex flex-col px-6 py-6 space-y-6 font-['Space_Grotesk'] uppercase tracking-[0.1em] text-center text-sm">
+            <a class="text-[#dab9ff]" href="index.html">Trang chủ</a>
+            <a class="text-white/70 hover:text-white" href="Mechanical_Mastery.html">Bàn phím</a>
+            <a class="text-white/70 hover:text-white" href="Optical_Precision.html">Chuột</a>
+            <a class="text-white/70 hover:text-white" href="team.html">Liên hệ</a>
+        </div>
+    </div>
+    <!-- Hero Section -->
+    <main class="relative min-h-screen flex flex-col items-center justify-center pt-24 overflow-hidden">
+        <!-- Abstract Background Elements -->
+        <div class="absolute inset-0 z-0">
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-container/20 rounded-full blur-[120px]">
+            </div>
+            <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-secondary-container/10 rounded-full blur-[100px]">
+            </div>
+        </div>
+        <section class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+            <span class="font-label text-sm tracking-[0.3em] uppercase text-primary mb-6 block opacity-80">AESIEUNHAN
+                PRESENT</span>
+            <h1
+                class="font-headline text-5xl md:text-8xl font-black tracking-tighter text-on-background mb-8 leading-[0.9]">
+                THE ENDGAME: <br />
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-fixed to-secondary-fixed">NGHỆ
+                    THUẬT CỦA HIỆU NĂNG</span>
+            </h1>
+            <p class="font-body text-lg md:text-2xl text-on-surface-variant max-w-2xl mx-auto mb-12 font-light">
+                Nâng tầm trải nghiệm, chinh phục mọi giới hạn. Nơi công nghệ tối thượng gặp gỡ tư duy thẩm mỹ độc bản.
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                <button
+                    class="bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold uppercase py-5 px-12 tracking-widest electric-glow transition-all active:scale-95 duration-200">
+                    Khám Phá Ngay
+                </button>
+                <button
+                    class="bg-surface-container-highest/40 backdrop-blur-md border border-white/10 text-white font-headline font-bold uppercase py-5 px-12 tracking-widest hover:bg-surface-container-highest transition-all active:scale-95 duration-200">
+                    Xem Bộ Sưu Tập
+                </button>
+            </div>
+        </section>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <span class="material-symbols-outlined text-white/30 text-4xl">keyboard_double_arrow_down</span>
+        </div>
+    </main>
+    <!-- Content Section: Introduction & Bento Grid -->
+    <section class="py-32 px-10 max-w-[1400px] mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-12">
+            <div class="max-w-2xl">
+                <h2 class="font-headline text-4xl md:text-6xl font-extrabold uppercase mb-8 tracking-tighter">Triết lý
+                    <br /><span class="text-primary-fixed">aeSieuNhan</span>
+                </h2>
+                <p class="font-body text-xl text-on-surface-variant leading-relaxed">
+                    Chúng tôi không chỉ lắp ráp thiết bị, chúng tôi kiến tạo những tuyệt tác công nghệ. Mỗi linh kiện
+                    được tuyển chọn gắt gao, mỗi đường nét thiết kế đều mang dấu ấn độc bản để phục vụ những cá nhân
+                    khao khát sự hoàn hảo tuyệt đối.
+                </p>
+            </div>
+            <div class="font-label text-6xl font-black text-white/5 select-none pointer-events-none">
+                EST 2024
+            </div>
+        </div>
+        <!-- Bento Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+            <!-- Large Focus Card -->
+            <div
+                class="md:col-span-8 group relative overflow-hidden bg-surface-container-low aspect-video md:aspect-auto md:h-[600px]">
+                <img alt="PC Hardware"
+                    class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
+                    data-alt="Close-up of high-end liquid cooled PC interior with electric violet lighting and metallic textures in a futuristic workshop setting"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-S_FmF7WKtqUY6hAAZWvL82RJZ0Gu-h58i5r4Gp-do2AjEyoDTAAtMfCojiTcRKJOJS-4XskmwvXXnoT6Ljr5XqsZbaZz2p1VtEvCz4PAy4DSEaMfAS2EzTWm66MEx-ZfAgFzzTeadq_6ZA0Un1dv21onmvhwpZtYC20-PHnOnrk0Od-sig63BNI0KRuMkrNrDqBa17So7sinqfpMq4LLhkoM7Yt5CI3SfZqv017glzRmJn0fAzBzG74qzCMDejDUgMU71pCj-Fg9" />
+                <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+                <div class="absolute bottom-10 left-10 p-2">
+                    <h3 class="font-headline text-3xl font-bold uppercase text-white mb-2">Linh Kiện Tuyển Chọn</h3>
+                    <p class="text-white/60 max-w-sm">Chỉ những silicon tốt nhất được đưa vào hệ thống THE ENDGAME.</p>
+                </div>
+            </div>
+            <!-- Vertical Stats Card -->
+            <div
+                class="md:col-span-4 bg-primary-container/10 p-10 flex flex-col justify-between border-l border-white/5">
+                <div class="space-y-12">
+                    <div>
+                        <span class="font-label text-primary text-4xl font-black">99.9%</span>
+                        <p class="font-headline uppercase tracking-tighter text-white/40">Độ Chính Xác</p>
+                    </div>
+                    <div>
+                        <span class="font-label text-secondary-fixed text-4xl font-black">0.1ms</span>
+                        <p class="font-headline uppercase tracking-tighter text-white/40">Độ Trễ Tối Thiểu</p>
+                    </div>
+                    <div>
+                        <span class="font-label text-primary-fixed text-4xl font-black">∞</span>
+                        <p class="font-headline uppercase tracking-tighter text-white/40">Khả Năng Tùy Biến</p>
+                    </div>
+                </div>
+                <div class="pt-8">
+                    <span class="material-symbols-outlined text-primary text-6xl"
+                        style="font-variation-settings: 'FILL' 1;">terminal</span>
+                </div>
+            </div>
+            <!-- Small Square Card 1 -->
+            <div class="md:col-span-4 group relative overflow-hidden bg-surface-container-high h-[400px]">
+                <img alt="Design"
+                    class="w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-1000"
+                    data-alt="Top down view of a minimalist custom mechanical keyboard with sleek matte black finish and subtle violet backlighting on a carbon fiber desk"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU9uMu2WRxz10EJENZUXNxd99zOfiFU6LODD3h_2UxxB-iX8hnVgCi4U5VZOXESBsYhLyuhIX5yg1-0EEthOc5A9Bb9iPv8Ahxn3zN3LBtoA545Goys8Wg27CfC3CZlhVdrhyfvz_AjiIHjxDfO21SRpf9nkioQDCOj-m2wMvoC_36Og4cKNmCYghsL2Mo06LUtk7KdUv-sV7GByZUOEb5dlXJiMMMmi6-SeFHwgT9ye7Cj28MEx1NYv4xT8HLXajvBTzae_Lau1da" />
+                <div
+                    class="absolute inset-0 flex items-center justify-center bg-background/20 group-hover:bg-transparent transition-colors">
+                    <h4
+                        class="font-headline text-xl font-bold uppercase tracking-widest text-white border-b-2 border-primary">
+                        Thiết kế độc bản</h4>
+                </div>
+            </div>
+            <!-- Long Horizontal Card -->
+            <div
+                class="md:col-span-8 bg-surface-container-lowest p-12 flex items-center justify-between group overflow-hidden relative">
+                <div class="relative z-10">
+                    <h4 class="font-headline text-3xl font-bold uppercase mb-4">Kết nối cộng đồng</h4>
+                    <p class="text-on-surface-variant max-w-md mb-8">Tham gia vào hệ sinh thái Discord của aeSieuNhan để
+                        cập nhật những dự án mới nhất và hỗ trợ kỹ thuật 24/7.</p>
+                    <a class="inline-flex items-center text-secondary-fixed font-bold uppercase tracking-tighter hover:gap-4 transition-all"
+                        href="#">
+                        Tham gia ngay <span class="material-symbols-outlined ml-2">trending_flat</span>
+                    </a>
+                </div>
+                <span
+                    class="material-symbols-outlined text-[200px] absolute -right-10 -bottom-10 text-white/[0.03] group-hover:text-primary/10 transition-colors duration-500">forum</span>
+            </div>
+        </div>
+    </section>
+    <!-- Product Showcase (Scroll Highlight) -->
+    <section class="bg-surface-container-low py-32 overflow-hidden">
+        <div class="px-10 max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div class="relative">
+                <div class="absolute -inset-10 bg-primary/10 blur-[80px] rounded-full"></div>
+                <img alt="Pro Gaming Mouse"
+                    class="relative z-10 w-full object-contain filter drop-shadow-[0_20px_50px_rgba(143,0,255,0.3)]"
+                    data-alt="Professional grade wireless gaming mouse floating in zero gravity against a dark background with sharp neon violet highlights and particle effects"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyBsOe2pRwPB0f38MlSgesIshtV3Jbm5UFefUM1qNKyaeIWrildu41Fbi0jj4ewQZ1yyKeJOp1rcCDqI1h9ltzy64rJnmbOODRAlkuI0Ki9gaamgFcTEtHjNO38e4-ETIFzzfKNSljDe1D-dW5ldOD0FUwKjCNKYE-c8vZGIEiHcawFdNxNbbn91vWMRtzO1w8_OYXfoR5Ra3QklsqtQ9LzooFYZRtW_YzSccHu8yQopw0s8T5kajLYmbx2HRPsj8M7mN9jauJZdnq" />
+            </div>
+            <div class="space-y-10">
+                <span
+                    class="bg-primary/20 text-primary px-4 py-1 text-xs font-label font-bold tracking-widest uppercase">Mới
+                    nhất</span>
+                <h2 class="font-headline text-6xl font-black uppercase tracking-tighter">VOID WALKER X1</h2>
+                <div class="grid grid-cols-2 gap-8 py-8 border-y border-white/5">
+                    <div>
+                        <span class="block text-white/40 font-label text-xs uppercase mb-2">Trọng lượng</span>
+                        <span class="text-2xl font-headline font-bold">49 Grams</span>
+                    </div>
+                    <div>
+                        <span class="block text-white/40 font-label text-xs uppercase mb-2">Cảm biến</span>
+                        <span class="text-2xl font-headline font-bold">Optical Gen-4</span>
+                    </div>
+                </div>
+                <p class="text-on-surface-variant text-lg">Phá bỏ mọi rào cản vật lý. Void Walker X1 là kết tinh của
+                    hàng ngàn giờ thử nghiệm, mang lại sự linh hoạt tối đa cho những pha xử lý chớp nhoáng.</p>
+                <button
+                    class="w-full md:w-auto bg-white text-background font-headline font-bold uppercase py-5 px-16 hover:bg-primary transition-all">
+                    Sở hữu ngay - 4.990.000đ
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer
+        class="bg-[#131313] py-20 px-10 border-t border-white/5 flex flex-col items-center justify-center text-center space-y-8 w-full">
+        <div class="font-['Space_Grotesk'] text-4xl font-bold text-white mb-4 uppercase tracking-tighter">THE ENDGAME
+        </div>
+        <div class="flex flex-wrap justify-center gap-8 md:gap-16 font-['Be_Vietnam_Pro'] text-sm tracking-widest">
+            <a class="text-white/40 hover:text-[#8F00FF] transition-all uppercase" href="#">Facebook</a>
+            <a class="text-white/40 hover:text-[#8F00FF] transition-all uppercase" href="#">Instagram</a>
+            <a class="text-white/40 hover:text-[#8F00FF] transition-all uppercase" href="#">Discord</a>
+            <a class="text-white/40 hover:text-[#8F00FF] transition-all uppercase" href="#">Twitter</a>
+        </div>
+        <div class="max-w-xl text-white/20 text-xs font-label uppercase tracking-widest leading-relaxed">
+            Thiết kế và phát triển bởi đội ngũ aeSieuNhan. <br />
+            Mọi sản phẩm đều được kiểm định chất lượng gắt gao trước khi đến tay người dùng.
+        </div>
+        <div class="pt-8 text-white/40 font-label text-[10px] tracking-[0.4em] uppercase">
+            © 2024 THE ENDGAME - BY AESIEUNHAN. ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+</body>
+
+</html>
